@@ -5,7 +5,7 @@ pub fn build(b: *std.Build) void {
     const target = b.standardTargetOptions(.{});
 
     const module = b.addModule("zig-cli", .{
-        .source_file = std.Build.FileSource.relative("src/main.zig"),
+        .source_file = .{ .path = "src/main.zig" },
     });
 
     const lib = b.addStaticLibrary(.{
